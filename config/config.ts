@@ -42,7 +42,6 @@ export default defineConfig({
         },
       ],
     },
-
     {
       path: '/welcome',
       name: 'welcome',
@@ -69,6 +68,27 @@ export default defineConfig({
       icon: 'table',
       path: '/list',
       component: './ListTableList',
+    },
+    {
+      path: '/ZMZB',
+      name: 'zmzb',
+      icon: 'CreditCard',
+      access: 'canAdmin',
+      // component: './zmzb',
+      routes: [
+        {
+          name: 'ZMZB_Apply',
+          icon: '',
+          path: '/ZMZB/applyForm',
+          component: './zmzb/apply',
+        },
+        {
+          name: 'ZMZB_List',
+          icon: '',
+          path: '/ZMZB/list',
+          component: './zmzb/list',
+        },
+      ],
     },
     {
       path: '/',

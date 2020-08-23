@@ -49,4 +49,7 @@ export default {
   'menu.editor.flow': '流程编辑器',
   'menu.editor.mind': '脑图编辑器',
   'menu.editor.koni': '拓扑编辑器',
+  'menu.zmzb': '直免直报',
+  'menu.zmzb.ZMZB_Apply': '直免直报申请',
+  'menu.zmzb.ZMZB_List':'直免直报列表'
 };
