@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Form, Input, Select, DatePicker } from 'antd';
+import { Row, Col, Form, Input, Select, DatePicker, Button } from 'antd';
 
 const layout = {
   labelCol: { span: 8 },
@@ -22,6 +22,17 @@ const ApplyInfoForm: React.FC<{}> = () => {
     console.log(`selected ${value}`);
   }
 
+  const loadData = () => {
+    form.setFieldsValue({
+      taa_ApplyID: '1111111111',
+    });
+  };
+
+  const onReSet = () => {
+    form.resetFields();
+  };
+
+  
   return (
     <div>
       <Form
@@ -48,7 +59,7 @@ const ApplyInfoForm: React.FC<{}> = () => {
               name="taa_register_company"
               rules={[{ required: true, message: '必须输入登记单位' }]}
             >
-              <Select  style={{ width: 120 }} onChange={handleChange}>
+              <Select style={{ width: 120 }} onChange={handleChange}>
                 <Option value="jack">Jack</Option>
                 <Option value="lucy">Lucy</Option>
                 <Option value="disabled" disabled>
@@ -64,7 +75,7 @@ const ApplyInfoForm: React.FC<{}> = () => {
               name="taa_reporting_type"
               rules={[{ required: true, message: '必须输入填报类型' }]}
             >
-              <Select  style={{ width: 120 }} onChange={handleChange}>
+              <Select style={{ width: 120 }} onChange={handleChange}>
                 <Option value="jack">Jack</Option>
                 <Option value="lucy">Lucy</Option>
                 <Option value="disabled" disabled>
@@ -80,7 +91,7 @@ const ApplyInfoForm: React.FC<{}> = () => {
               name="taa_reporting_place"
               rules={[{ required: true, message: '必须输入填报归属地' }]}
             >
-              <Select  style={{ width: 120 }} onChange={handleChange}>
+              <Select style={{ width: 120 }} onChange={handleChange}>
                 <Option value="jack">Jack</Option>
                 <Option value="lucy">Lucy</Option>
                 <Option value="disabled" disabled>
@@ -127,6 +138,16 @@ const ApplyInfoForm: React.FC<{}> = () => {
             >
               <Input />
             </Form.Item>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Button htmlType="submit" type="primary">
+              保存
+            </Button>
+          </Col>
+          <Col>
+            <Button htmlType="button" onClick={onReSet}>重置</Button>
           </Col>
         </Row>
       </Form>
